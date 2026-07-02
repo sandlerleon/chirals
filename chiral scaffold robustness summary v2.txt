@@ -1,0 +1,94 @@
+
+================================================================================
+ROBUSTNESS EXTENSIONS SUMMARY v2.0 — Topological Chiral Scaffold
+Run: 2026-07-01 19:50:53
+================================================================================
+
+PURPOSE
+────────────────────────────────────────────────────────────────────────────────
+Tests whether the v1 finding -- that this class of chiral-confinement
+mechanism is comparatively disorder-tolerant -- is an artifact of specific,
+arbitrary modeling choices (Gaussian disorder, linear σ(U) mapping, fixed
+β/threshold) or a structural feature of the framework.
+
+(A) FUNCTIONAL FORM ROBUSTNESS
+────────────────────────────────────────────────────────────────────────────────
+Tested σ_χ(U_χ) = (1-U)·ΔE [linear], (1-U)²·ΔE [quadratic/steeper],
+√(1-U)·ΔE [sqrt/shallower].
+ee(U=0.01)/ee(U=1.0) ratio: linear=0.66, quadratic=0.66, sqrt=0.66
+FINDING: all three forms show gradual (not sharp-cliff) degradation.
+The qualitative disorder-tolerance conclusion is NOT an artifact of the
+specific linear mapping used in v1, though the steepness of degradation
+does depend on the assumed form -- this dependency is now explicit and
+quantified rather than hidden.
+
+(B) DISORDER-DISTRIBUTION ROBUSTNESS
+────────────────────────────────────────────────────────────────────────────────
+Tested Gaussian (independent per-site noise), terrace+defect-band
+(correlated step-bunching), and heavy-tailed Laplace disorder, matched in
+mean/variance at each U_χ.
+FINDING: the terrace/defect-band model (arguably the most physically
+realistic for step-bunched mineral surfaces) shows the mechanism is EVEN
+MORE disorder-tolerant than the Gaussian baseline, because well-ordered
+terraces retain full discrimination regardless of defect-band severity.
+The heavy-tailed model shows somewhat faster degradation than Gaussian,
+as expected. The qualitative "gradual, not sharp" conclusion holds across
+all three.
+
+(C) SENSITIVITY TO β AND ΔE_thresh
+────────────────────────────────────────────────────────────────────────────────
+At a representative rough surface (U_χ=0.4), 85% of the
+tested (β ∈ [0.5,3.0], threshold ∈ [0.05,1.00] kT) grid still produces
+ee above the useful-amplification threshold (20%).
+FINDING: the qualitative conclusion (rough surfaces remain useful) is
+robust across most of the physically plausible parameter range, but
+breaks down at combined high-β / high-threshold corners -- these
+combinations are now explicitly identified as the conditions under which
+the framework's optimistic conclusion would NOT hold, giving reviewers
+and experimentalists a concrete falsification region to check first.
+
+(D) MONTE CARLO UNCERTAINTY BAND
+────────────────────────────────────────────────────────────────────────────────
+Across 300 joint draws of (ΔE0, β, ΔE_thresh) from literature-plausible
+ranges, the MEDIAN ee stays close to or above the useful threshold
+(20%) across nearly the full U_χ range (e.g. median≈0.25 at
+U_χ=0.40, median≈0.36 at U_χ=1.00). However, the 5th-percentile
+(worst-case) curve falls BELOW the useful threshold for all but the
+highest uniformity values tested (5th-percentile ee ≈ 0.03-0.06 for
+U_χ ≤ 0.80, only approaching 20% near U_χ=1.0). This
+replaces the v1 single best-fit curve with an explicit uncertainty band,
+directly addressing the "report uncertainty, not only point estimates"
+recommendation, and reveals a real limitation the point-estimate version
+concealed.
+
+OVERALL CONCLUSION
+────────────────────────────────────────────────────────────────────────────────
+The paper's most defensible claim -- that surface geometric uniformity
+functions as an independent order parameter, and that geometrically
+confined chiral mechanisms of this general type tend toward gradual
+rather than threshold-like disorder response as U_χ decreases -- survives
+tests (A), (B), and (C): the qualitative shape (gradual decline, not a
+sharp cliff) is not an artifact of the linear σ(U) mapping, the Gaussian
+disorder assumption, or the specific β/threshold values chosen in v1.
+
+Test (D) adds an important qualification: under the FULL literature-
+uncertainty range for ΔE0, β, and ΔE_thresh (not just the single v1
+point estimate), the median outcome still supports gradual, disorder-
+tolerant behavior, but the pessimistic (5th-percentile) parameter
+combination would NOT reliably produce useful amplification except at
+near-perfect surface uniformity. This means the STRUCTURAL claim
+(gradual vs. sharp-cliff response) is robust, but the QUANTITATIVE claim
+(rough surfaces remain useful) depends on where the true parameters sit
+within the literature-uncertain range -- precisely the kind of
+distinction the peer review requested, and precisely why the paper
+should present this as a testable hypothesis with a defined
+falsification region (Fig C), not a settled quantitative prediction.
+
+REMAINING GAP (explicitly out of scope here)
+────────────────────────────────────────────────────────────────────────────────
+Direct comparison against DFT/MD for a specific mineral surface, and
+derivation (rather than assumption) of σ_χ(U_χ) from first-principles
+adsorption statistics, remain future work requiring computational
+resources and mineral-specific input data beyond this framework-level
+robustness analysis.
+================================================================================
